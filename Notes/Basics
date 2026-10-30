@@ -45,6 +45,16 @@ IPSEC-zbiór protokołów służących do implementacji bezpiecznych połączeń
 
 ##############################################
 
+##PROTOKOŁY##
+DNS (port53)-
+FTP (20)
+FTP (21)
+HTTP (80)
+HTPS(443)
+Dodatkowe serwery np. Proxy (8080)
+SSH (22)
+
+####################################################
 ##Urządzenia sieciowe##
 
         @Router-Jest to urządzenie które łączy nam różne sieci(np. dwie ze sobą). LAN- wirtualna sieć LAN, czyli podczas jednego fizycznego routera/switcha możemy oddzielić kilka sieci LAN. ACL- kontrola nad ruchem między VLAN.
@@ -62,7 +72,19 @@ inny przykład: 172.16.1.2 maska 255.255.255.240/28   172.16.1.0 -adres sieci 17
 Strefa DMZ- Pewien fragment sieci który oddzielony od całej reszty w ramach strefy DMZ. Nie należy ani do sieci Wewnętrznej ani zewnętrznej.
 Strefa DMZ jest ważna ponieważ gdy wystawiamy jakieś usługi do Internetu to tworzy się realne zagrożenie.
 Celem utworzenia strefy DMZJest ochrona segmentów sieci lokalnej w przypadku naruszenia bezpieczenstwa serwerow publicznych znajdujacych sie wewnatrz sieci .
+Mikro Segmentacja z połączeniem ze wszystkimi technikami jakie daje nam next generation firewall(NGFW) prowadzi do skutecznego zabezpieczenia.
 #################################
+
+##WIFI##
+Oparty jest na standardzie 802.11 
+2,4Ghz - Większy zasięg, mniej wrażliwe na różne przeszkody(sciany,szyby), mniejsza przepustowość oraz liczba kanałów względem 5Ghz.
+5Ghz-mniejszy zasięg, wrażliwy na przeszkody, o wiele większa przepustowość + większa liczba kanałów względem 2,4Ghz
+Sposoby zabezpieczenia WiFi:
+WPA/WPA2 PSK -ustawiamy długie hasła o losowych znakach uzywany w domowej sieci
+WPA/WPA2 ENTERPRISE Możliwość wykorzystania zewnętrznego serwera którego możemy zintegrować z domeną więc każdy pracownik będzie miał swoje własne konto do łączenia się z siecią WiFi ,używamy w firmach.
+1GB/s→8Gb/s→1024MB/s→8192Mb      1Gb/s→128MB/s→1024Mb/s   1MB/s→8Mb/s
+GB-gigabajt     Gb-gigabit      MB-megabajt      Mb-megabit 
+######################################
 FAZY ATAKU
 1.Faza S1- Identyfikkacja i definicja
 
