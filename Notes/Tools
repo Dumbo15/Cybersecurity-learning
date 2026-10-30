@@ -1,8 +1,19 @@
 @@@@@@@@@@@@@@@@@Hiperwizor@@@@@@@@@@@@@@
 
 @@@VIRTUALBOX OD ORACLA@@@
+@@VMWARE@@
+@@HYPER V@@
+
+@@@@@@@@@@@@@Oprogramowania@@@@@@@@@
+@@ RED HAT ENTERPRISE LINUX@@  
+komercyjna, przeznaczona dla firm i przedsiębiorców dystrybucja Linuksa firmy Red Hat. Jest ona kontynuacją dystrybucji Red Hat Linux.
+@@ CISCO PACKET TRACER@@
+jest symulatorem sieci i routerów Cisco. Wykorzystywany jest głównie do szkoleń i edukacji, a także do symulacji małych, średnich i dużych sieci komputerowych.
 
 @@@@@@@@@@SNIFERY@@@@@@@@@@@@@
+
+@@NMAP@@
+
 
 @@@Ettercap@@@
 Narzędzie (sniffer) które pozwala na przekierowywanie oraz diagnostykę ruchu w sieciach lokalnych. Pozwalają one na diagnostykę poprawnego działania sieci oraz na dokonywanie ataków MITM na innych użytkowników sieci. 
@@ -12,3 +23,14 @@ Narzędzie (sniffer) które pozwala na przekierowywanie oraz diagnostykę ruchu 
 
 @@@@@@@@@@@Testowanie aplikacji webowych@@@@@@@
   @@Burp Suit@@
+kontroluje i analizuje HTPP/HTPPS
+
+
+@@CUPP@@
+za pomocą tego wykonujemy słownik haseł
+@@CRUNCH@@
+to generator listy słów ma dużo ofert generowania haseł
+@@HPING@@
+to darmowy generator pakietów i analizator protokołu TCP/IP. Jest narzędziem do audytowania i sprawdzania bezpieczeństwa zapory sieciowej oraz sieci i był wykorzystywany w technice skanowania zwanej "idle scan", a teraz zaimplementowanej w Nmap.
+@@HUB@@
+urządzenie gdy chcemy podsłuchać i wykonywać atak spoofing i atak MITM
