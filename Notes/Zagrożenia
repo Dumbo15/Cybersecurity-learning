@@ -1,0 +1,32 @@
+Botnet - grupa komputerów zainfekowanych
+
+Exploit- Wprowadzenie złośliwego kodu,
+
+Malware- złośliwe oprogramowanie dzielące się na grupy
+
+Virus- program replikuje się na poziomie 1 hosta
+
+Worm- same infekują 
+
+Trojan- oprogramowanie podszywające się pod pomocne i ciekawe
+
+SQL Injection-atakujący wstrzykuje do aplikacji (nieautoryzowany) fragment zapytania SQL. Wstrzyknięcie zazwyczaj możliwe jest z jednego powodu – braku odpowiedniego sprawdzenia (walidacji) parametru przekazanego przez użytkownika.Czym to może skutkować?
+W zależności od sytuacji możemy mieć do czynienia z:
+nieautoryzowanym dostępem w trybie odczytu lub zapisu do całej bazy danych,
+możliwością ominięcia mechanizmu uwierzytelnienia,
+możliwością odczytania wybranych plików (system operacyjny, na którym pracuje baza danych),
+możliwością tworzenia plików w systemie operacyjnym, na którym pracuje baza,
+możliwością wykonania kodu w systemie operacyjnym (uprawnienia użytkownika, na którym pracuje baza lub web serwer – w przypadku aplikacji webowych).
+
+XSS(cross-side-scripting)-Po pierwsze jest to przede wszystkim atak na klienta korzystającego z podatnej webaplikacji (w przeciwieństwie np. do SQL injection, którego głównym celem jest część serwerowa). Po drugie, atak polega na wstrzyknięciu do przeglądarki ofiary fragmentu javascript bądź innego języka skryptowego (np. VBScript), który może być uruchomiony w przeglądarce.W efekcie, atakujący ma możliwość wykonania dowolnego kodu skryptowego w przeglądarce (nie mylić z uruchomieniem dowolnego kodu w systemie operacyjnym ofiary).Czym może skutkować wykonanie kodu javascript w przeglądarce ofiary? Warto tu wspomnieć takie możliwości:
+wykradanie cookies (w tym cookies sesyjnych) – tj. de facto przejęcie (zalogowanej) sesji ofiary,
+dynamiczna podmiany zawartości strony www (np. słynne „this site have beed hacked”),
+uruchomienie keyloggera w przeglądarce,
+hostowanie malware-u z wykorzystaniem zaatakowanej aplikacji (np. poprzez użycie tagu iframe)
+
+CSRF-(Cross-Site Request Forgery; alternatwnie używane nazwy: XSRF,session riding czy one-click attack, jest to zmuszenie przeglądarki ofiary do wykonania pewnej nieautoryzowanej akcji (wykonania requestu HTTP). Zauważmy przy okazji, że jest to atak na przeglądarkę internetową (a nie część serwerową aplikacji webowej; dla serwera requesty powstałe w wyniku ataku to w pełni legalna komunikacja z przeglądarki użytkownika).CSRF nie należy mylić z atakiem Man-in-The-Browser, gdzie atakujący też może wpływać na działanie przeglądarki, ale wiąże się to z wcześniejszym zainstalowaniem w systemie ofiary malware. W przypadku CSRF, system jak i przeglądarka ofiary nie są w żaden sposób trwale modyfikowane. Wykorzystana jest po prostu pewna właściwość architektury web i przeglądarek internetowych.CSRF to również nie to samo co XSS. Jeśli mamy XSS-a – to da się zrealizować CSRF ale jeśli nasza aplikacja podatna jest na CSRF – to niekoniecznie musimy być podatni na XSS. Z kolei sam Cross-Site Scripting  może służyć do ominięcia metod ochrony przed CSRF.
+
+DoS
+DDoS
+Ping flood
+Ping of death
