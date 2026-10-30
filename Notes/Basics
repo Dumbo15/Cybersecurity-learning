@@ -1,0 +1,83 @@
+Zbiór podstaw Sieci:
+
+TCP/IP- stag różnych protokołów na którym opiera się współczesny internet składający się z 4 warst: 1.Dostępu do sieci, 2. Internetowa, 3. Transportowa, 4. Aplikacji.
+
+Model ISO/OSI- jest to teoretyczny zbiór zasad i reguł w jaki sposób powinna wyglądać sieć komputerowa i jak jest zbudowana.
+**1.Warstwa Fizyczna(Physical layer)**- odpowiada za fizyczny aspekt komunikacji czyli światłowód, kable, fale radiowe. Porozumiewa się z warstwa 2 za pomocą Adresą Mac (48 bitowy,unikatowy w skali światowej, nadawany przez producenta danej karty podczas jej produkcji).
+
+**2.Warstwa Łącza danych(Data link layer)**-odpowiada za transmisje bajtów za pomocą warstwy fizycznej oraz steruje dostępem do medium komunikacyjnego. Pracują tutaj głównie Switche. Porusza się tutaj protokół ARP który daje sygnał do warstwy 3 powiązując Adres Mac z IP.Najpopularniejsze zabezpieczenia warstwy 2 to: Port Security(daje instrukcje naszemu switchowi że w ramach tego portu możemy tylko wpuszczać jedno konkretne urządzenie),Dot1x(znajdzie zastosowanie w firmach gdzie za pomocą np. integracji z domena nasza sieć będzie wiedziała czy wpuszczaćdo niej odpowiednich urzytkowników lub odpowiednie urządzenielub czy je wrzucać do sieci gościnej albo całkowicie odpinać dostęp jeżeli Ci użytkownicy czy to urządzenie nie są nam znane.
+
+**3.Warstwa Sieciowa (Network layer)** - jest teoretycznie najważniejszą z Modelu ISO/OSI. Odpowiada za dobieranie odpowiednich dróg połączeń między węzłami sieci (tzw.routing).Wykonuje się na niej Adresacja IP (IPV4,IPV6). IPV4-32 bitowy adres z 2 pulami : Pule prywatne (sieci lokalne,domowe które nie są bezpośrednio dostępne do internetu np. 192.168.1.2 Pule publiczne(są dostępne z każdej części świata). IPV6-128 bitowy adres, nowsza wersja IPV4 gdzie adresy się pokończyły. Występują tutaj protokoły min. ICMP(Pełni przede wszystkim funkcję kontroli transmisji w sieci.)IPSEC(zapewnia bezpieczeństwo dla IP i dla wszystkich wyższych protokołów).
+
+**4.Warstwa transportowa(Transport layer)**-głównym zamiarem jest kontrola i dbanie o prawidłowy transport danych między 2 hostami między naszym komputerem a stroną www. Wyróżniamy protokoły:  TCP(Charakteryzuje się tym że: jest wolniejszy od UDP, korzysta z three way handshake, potwierdzenie dostarczenia, niezawodność, retransmisja w przypadku niepowodzenia, bardzo proste i szybkie wykrywanie błędów, znajdzie zastosowanie w ssh, strony www, przesyłanie danych ), UDP(szybszy, lżejszy, nie korzysta z three way handshake, brak potwierdzenia, brak gwarancji dostarczenia, posiada mechanizm sprawdzania błędów natomiast błędne pakiety po prostu odrzuca.Znajdzie zastosowanie w grach online, aplikacjach DNS,VoIP, ,krótkie zapytania).  **Three way handshake** - wstępna rozmowa między naszym komputerem a serwerem www(taka inicjacja).
+
+Flaga Syn -nawiązanie    Flaga Ack -potwierdzenie   Flaga Fin -koniec komunikacji
+
+**5.Warstwa Sesji (Session layer)**- służy do nawiązywania i utrzymywania sesji pomiędzy dwoma końcowymi hostami. Wyróżniamy dwa protokoły:L2TP odpowiada za bezpieczeństwo głównie używany w VPN ,NetBIOS- udostępnianie plików i nazwewnictwo.
+
+**6.Warstwa Prezentacji (Presentation layer)**- służy do prezentacji danych warstwie aplikacji oraz szyfruje i odszyfrowuje nasze dane w komunikacji między naszym komputerem a stroną www. Wyróżniamy protokoły: SSL,TLS- nowsza wersje SSL **Szybka odpowiedź**: SSL/TLS (Secure Sockets Layer i Transport Layer Security) to protokół kryptograficzny, który szyfruje dane między klientem a serwerem i weryfikuje tożsamość serwera przed rozpoczęciem wymiany. To właśnie on umożliwia działanie protokołu HTTPS. Poniższe sekcje opisują proces uzgadniania, wykorzystywane klucze szyfrujące oraz sposób uzyskania certyfikatu.
+
+**7.Warstwa aplikacji(Application layer)**- odpowiedzialna jest za interakcje z użytkownikiem. Czyli wysyłanie żądania HTTP Request do serwera. W odpowiedzi wyświetli nam się strona. SMTP-  służy do wysyłania wiadomości e-mail IMAP i POP3 **dwa podstawowe protokoły służące do odbierania poczty elektronicznej z serwera na urządzenie użytkownika IMAP- dziala na serwerze** 
+
+###################################################3
+##IPV4### 
+Identyfikacja hostów w IPv4 opiera się na adresach IP. Dane przesyłane są w postaci standardowych datagramów. Skłąda się z 4 oktetów, czterech oddzielonych od siebie liczb od 0-255 i dwa w danej sieci urządzenia nie mogą mieć tego samego adresu IP. Czyli IPV4 skłąda się z 4oktetów każdy oktet ma 8bitów a każdy bit może przyjmować wartość od 0-255.
+Protoku komunikacyjny z 32 bitowym adresem i 2 pulami :
+
+@Pule prywatne (Sieci lokalne,domowe ktore nie sa bezposrednio podpiete do internetu )np.192.168.1.2
+@Pule publiczne (sa dostepne z kazdej czesci swiata) 
+@Szczególny adres 127.0.0.1 tzw. pętla albo adres lokalny(to my) aby sprawdzić to w cmd wpisujemy ping 127.0.0.1
+
+ping 169.254.x.x- wysyła do DHCP o przydzielenie adresu IP na nowo
+
+Adres IP mówi nam w jakiej sieci jesteśmy a maska daje nam wielkosc tej sieci. Im więcej jedynek tym mniej adresów. 255.255.0.0→11111111 11111111 00000000 00000000 czyli 16 na 32 ale z 32 odpada 2 na adres rozgłoszeniowy i adres sieci
+
+###########################################
+
+##IPV6##
+Protokół komunikacyjny, nastepca Ipv4 ,128 bitowy adres 
+
+Wystepują protokoły ICMP,IPSEC.
+
+ICMP-Pełni przede wszystkim funkcję kontroli transmisji w sieci. Jest wykorzystywany w programach ping oraz traceroute.
+
+IPSEC-zbiór protokołów służących do implementacji bezpiecznych połączeń oraz wymiany kluczy szyfrowania pomiędzy komputerami. Protokoły tej grupy mogą być wykorzystywane do tworzenia Wirtualnej Sieci Prywatnej.
+
+##############################################
+
+##Urządzenia sieciowe##
+
+        @Router-Jest to urządzenie które łączy nam różne sieci(np. dwie ze sobą). LAN- wirtualna sieć LAN, czyli podczas jednego fizycznego routera/switcha możemy oddzielić kilka sieci LAN. ACL- kontrola nad ruchem między VLAN.
+        @Switch-Są to urządzenia które działają na warstwie 2 modelu ISO/OSI, lecz są też na warstwe 3 które oprócz wykonywania ich głównego założenia realizują kwestie z realizacja adresacji IP (routingiem) a także sięgają do warstwy 4 gdzie realizują kontrole dostępu. Głównym żałożeniem jest łączenie naszych urządzeń końcowych czyli komputerów, laptopów, drukarek, itd. we wspólne sieci lokalne. Korzystają z adresu Mac na warstwie 2. Najpopularniejszym Switchem jest 2960 znajdujący się w prawie każdej serwerowni.
+Połączenie ARP -to mechanizm pozwalający na odwzorowanie adresu logicznego, czyli IP na adres logicznoy czyli Mac. 
+Kiedy laptop chce nawiązać połączenie i gdy wcześniej się nie łączył z laptopem czyli przeszukuje swoje ARP w bazie i nie znajduje wysyła do Switcha ARP Request o przydzielenie do Mac adresu , IP. **Maska Podsieci** identyfikuje nam w jakiej sieci znajduje się to urządzenie. Przekazuje nam takie informacje jak jaki jest adres sieci danej sieci lub jaki jest adres rozgłoszeniowy oraz jaki jest zakres danej sieci i jakichinnych adresów możemy się tam spodziewać. 192.168.10 -adres sieci   192.168.1.255 - adres rozgłoszeniowy 
+inny przykład: 172.16.1.2 maska 255.255.255.240/28   172.16.1.0 -adres sieci 172.16.1.15- adres rozgłoszeniowy
+
+        @Mosty i przełączniki
+        @Regenator i koncetrator
+        @Modem
+        @Karta sieciowa
+        @Punkt dostępu
+##############################################
+Strefa DMZ- Pewien fragment sieci który oddzielony od całej reszty w ramach strefy DMZ. Nie należy ani do sieci Wewnętrznej ani zewnętrznej.
+Strefa DMZ jest ważna ponieważ gdy wystawiamy jakieś usługi do Internetu to tworzy się realne zagrożenie.
+Celem utworzenia strefy DMZJest ochrona segmentów sieci lokalnej w przypadku naruszenia bezpieczenstwa serwerow publicznych znajdujacych sie wewnatrz sieci .
+#################################
+FAZY ATAKU
+1.Faza S1- Identyfikkacja i definicja
+
+2.Faza S2- Rozpoznawanie
+
+3.Faza S3- Uzbrojenie
+
+ 4.Faza S4-Dostarczenie
+
+ 5.Faza S5-Uruchomienie i kontrola kodu źródłowego
+
+ 6.Faza S6-Realizacja Celów
+
+ 7.Faza S7- zakończenie ataku
+
+####################################################
+
+
