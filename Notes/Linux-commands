@@ -2,3 +2,103 @@
 
 #Commands
 ls -la #list files(lista plikow)
+    
+ ipconfig.exe
+        
+        wsl —list -v - z jakiej wersji korzysta kali
+        
+        wsl —list —all -wyświetla dystrybucje
+        
+        1. “su -” -katalog domowy roota (logowanie na roota)
+        2. “man apt”- instrukcja linuxa
+        3. “man nmap”- instrukcje nmapa
+        4. “nmap 192....(ip)”- otwiera IP
+        5. “sudo nmap”- do sprawdzenia czy windows pasuje czy nie(nmap -sV 10.0.2.15)
+        6. “sudo adduser nazwauzytkownika” - tworzenie urzytkownika
+        7. “cd /etc/ →less passwd “ - widzimy wszystkich użytkowników naszego systemu oraz konta usług lub serwerów które są zalogowane w naszym systemie
+        8. “ip a” -interfejsy sieciowe i jakie otrzymały adresy
+        9. “cd /etc/ → cat resolv.conf → cd network/ → nano interfaces” - edytor
+        10. “ifconfig” - karta sieciowa
+        11. “ifdown nazwakarty” - odcięcie karty sieciowej
+        12. “ifdown nazwa ; ifup nazwa” - restart karty sieciowej
+        13. “ssh localhost” - logowanie się do komputera
+        14. “apt-get update” - aktualizacja oprogramowania
+        15. “apt-get install sudo” - instalacja sudo
+        16. “usermod -a -G sudo nick” - dodawanie użytkownika (na roocie)
+        17. “wget link”-pobieranie konkretnych plików
+        18. “sudo dpkg -i pobranyplikzlinku” - instalacja linku/pliku
+        19. “sudo apt-get install aptitude” - instalacja urzadzenia aptitude (menadzer pakietów który znajdzie oprogramowanie gdy nie znamy jego nazwy)
+        20. “mv” - służy do przenoszenia plików jak i do ich zmiany
+        21. “sudo aptitude”- wejscie do menadzera
+        22. “echo””tekst”> nazwapliku” - zapisywanie tekstu bez edytora 
+        23. “echo”tekst”>>nazwapliku”- dodaje do pliku 
+        24. “less plik” - przegladanie plików 
+        25. “cat plik | grep (czego szukamy)” - odczytanie komendy (po | można dać drugą komende ) i wyszukanie (grep) danej frazy
+        26. “grep -V słowo”- wyświetlenie tego słowa
+        27. “tail plik”- wyświetla końcówke pliku
+        28. “tail -n 2 plik”-wyswietla 2 ostatnie linijki
+        29. “tail -f plik”- monitorowanie pliku w którym coś się dzieje (podglądd na żywo)LIVE
+        30. “ls-l plik”-Zawiera więcej informacji na temat zawartości katalogu,prawa dostępu do pliku itd.
+        31. “chmod a-x, a+w plik”- zmienia dostęp do pliku w taki sposób żeby nikt nie mógł wykonać na nim operacji uruchomienia.  a-x  a(kto)wszyscy-x(akcja) a+w-przyznajemy wszystkim prawa do zapisu
+        32. “chmod a+x,o-w plik ”-nadanie możliwości urochomienia,zebrania zapisu dla użytkownika
+        33. “chown root:root plik”-zmiana własciciela root:root=użytkownik:grupa
+        34. “ln-s plik”-miękkie, jak ma się nazywać dowiązanie
+        35. “cp”-kopiowanie
+        36. “mv plik plik”-zmiana nazwy
+        37. “ln plik”-
+        38. “ls-la”-
+        39. “man komendanp.ls”-informacja na temat np.ls
+        40. “!!”-ponawia komende wcześniej
+        41. “ls-ls;echo”cześć””-;(myślnik)służy do łaćzenia komend
+        42. “mkdir test && cd test ”- && służy do tego że jeżęli pierwsza komenda wyrzuci błąd druga się nie wykona 
+        43. “cd -”-wraca do wcześniejszego momentu (w razie gdy wyszedłem niepotrzebnie z katalogu
+        44. “top”-wyświetla co się dzieje w systemie, jak długo działa itd.(aby wyjść ctrl+c)
+        45. “echo $PATH”-wyświetla 
+        46. “alias”-pokazuje że nie korzystamy tylko z polecenia ls
+        47. “alias ll ”- =ls-l własny alias
+        48. “ll”- wyświetla ls-l czyli prawo dostępu plików
+        49. “ls-a”-wyświetla więcej ustawień powłoki systemowej Bash
+        50. “find .”- wyszukuje w katalogu w którym się znajdujemy
+        51. “find / ”-wyszukiwanie odbędzie sięw katalogu głównym i w podkatalogach
+        52. “find . -name linux”- wyszukuje nazwe linux
+        53. “find . -iname linux”- wyszukuje nazwe linux niezależnie od liter
+        54. “find . -name “a*””-znajdzie w bieżącym katalogu pliki zaczynające sięna litere a
+        55. “find . -maxdepth 1 -name “a*””-wyszukuje pliki w katalogu w którym się aktualnie znajdujemy gdzie 1 oznacza miejsce gdzie jesteśmy 2 katalog głębiej itd.
+        56. “find . -maxdepth 1 -name “[ahg]*””-wyszukuje pliki zaczynające się od a,h,g
+        57. “find . -maxdepth 1 ! name “[ahg]*”-wyszukuje pliki NIE zaczynające się na litery a,h,g
+        58. “find . -name “*.conf”-o-name “*.inf””-wyszukuje pliki konfiguracyjne z końcówką conf lun inf , -o ocznacza lub (for z ang.)
+        59. “find . -size+10k”- pliki o wielkości wyszukiwania
+        60. “find . -iname “*.conf”-o-iname”*.inf” | xargs cp -t ~kangur/katalog/”- kopiuje wyświetlone pliki do katalogu, -t oznacza cel
+        61. “grep -l kangur/etc/password”-wyszukuje wszystko na temat kangur
+        62. “grep -r kangur.”- poszukuje login , -r pozwala przeszukiwać całe katalogi
+        63. “grep -v kangur passwd”-przeszukuje wszystkie linijki które nie są loginem
+        64. “sudo service”- usługi serwisu (service zarezerwowane jest dla roota)
+        65. “touch ”- tworzy plik
+        66. “echo “wiadomość” > plik”- tworzy wiadomość w pliku
+        67. “echo”wiadomość” >>plik”- dodaje wiadomość do reszty wiadomości w pliku
+        68. “uname -a ”- pokazuje uprawnienia systemowe
+        69. “reboot”- restart
+        70. “sudo traceroute 8.8.8.8”- jak daleko leci internet
+        71. “netsta”,”ss -ant”- porty i usługi które nasłuchują
+        72. “sudo service ssh start”, “service sushi start”- uruchamia serwer ssh
+        73. “netstat -an”- odkrywa ubuntu
+        74.  “ps aux”- do zobaczenia procesów
+        75. 
+    - Ogólne
+        
+        ODCZYTYWANIE DOSTPĘPU
+        
+        !prawa dostepu 2.png
+        
+        !prawa dostepu.png
+        
+        rwt - t tzw.strikibit dzięki temu kasować zawartość pliku moze więcej niż jeden użytkownik
+        
+        CTRL+A - początek lini
+        
+        CTRL+L - czyszczenie ekranu
+        
+        CTRL+A-wychodzi
+        
+        Zmienna PATH mówi o ścierzce z jakkiej korzystamy
+        
