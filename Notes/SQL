@@ -1,0 +1,66 @@
+Rodzaje baz danych: Słownikowa, grafowa, dokumentowa.
+
+zasada działania: Za pierwszym razem gdy się łączymy np.z sklepem internetowym, pobieramy baze danych na komputer która zostaje zkeszowana i za każdym następnym razem komputer sprawdza czy tą strone mamy własnie w tym keszu no i otpala.
+
+Autoikrementacja - automatyczne zwiększanie o 1 . ikrementacja- zwiększanie o 1.
+
+Klucze: Głowne(Obowiązkowy,minimalny,unikalny) Obcy (do tworzenia relacji,odpowiednik klucza głównego)
+
+liczby całkowite są najszybciej przez komputer przetwarzane
+
+Rodzaje relacji: 1. Jeden do jednego, 2.Jeden do wielu, 
+
+- Komendy
+    1. “*”- wszystkie foldery np. SELECT *
+    2. “AS”-alias, zastępujemy “,” np. SELECT imię AS nazwisko 
+    3. “,”- 
+    4. “SELECT”- Wybieramy
+    5. “COUNT(*)”-policzy np.ile osób jest o danym imieniu jak się powtarzja
+    6. “SELECT TOP 3*”- wyciągamy np 3 osoby losowe
+    7. “SELECT DISTINCT imie”- zwracają sięunikalne wartości,np.imienia sie nie powtarzaja
+    8. “WHERE”-wyszukuje danych parametrów np. WHERE imie=’anna’
+    9. “≥”-łącznie z danymi załóżeniami
+    10. “BETWEEN ....AND...”- znajduje między tym np. WHERE RokProdukcji BETWEEN 1020 AND 1999
+    11. “<>”,”! =”- oprócz danych parametrów,po za rokiem 2020 np. WHERE RokProdukcji <>2020
+    12. “IS NULL”-np. WHERE Uwagi IS NULL- wyszukuje wartość NULL 
+    13. “IS NOT NULL”- wyszukuje wszystko oprócz NULLA
+    14. “IN”-pozwala nam wymienić kilka wartości dla jednej komórki np. WHERE Imię IN(’anna’,’jan’)
+    15. “NOT IN”-wyszukuje wszystko po za tymi osobami
+    16. “OR”-łączy ze sobą warunki(jeden musi być prawdziwy żeby całość była prawdziwa
+    17. “AND”-łączy ze sobą dwa warunki ( obydwa muszą być prawdziwe
+    18. “()”- warto stosować wykonuje się jako pierwsze
+    19. “LIKE”- dzięki niemu % zastępuje dowolną ilość znaków np.WHERE Imię LIKE ‘a%’
+    20. “NOT LIKE”- wyświetla wszystko oprócz tego co w nawiasie 
+    21. “’a%’ ‘%a’ %_i%”
+    22. “ORDER BY”-sortuje np.ORDER BY imię, nazwisko czyli bedzie annia anka itd
+    23. “ORDER BY ... DESC”- odwraca kierunek sortowania 
+    24. “SELECT CONCAT (...,’ ‘,...)”-skleja np. SELECT CONCAT (imie,’ ‘,nazwisko) 
+    25. “SELECT LEFT(nazwa,liczba),”- wyciąga fragment tekstu od lewej strony np. SELECT LEFT(imie,1)
+    26. “WHERE RIGHT(nazwa,liczba)=’litera’”-wyciąga ostatnią literke 
+    27. “SELECT SUBSTRING('pesel',liczbanp.5,liczbanp.2)”- wyciąga od np.5 kolejne dwie cyfry
+    28. “SELECT LEN(nazwa),”- wyciąga długość napisu np SELECT LEN (imie)
+    29. “WHERE LEN(nazwa)=liczba”-wyciąga wszystkie nazywy o takiej liczbie
+    30. “WHERE YEAR(nazwanp.dataurodzenia) > 1970”- wyciąga rok miesiąc i dzień
+    31. Funkcje agregujące pomijają null po za count
+    32. “GROUP BY”-grupuje,
+    33. “HAVING”-filtruje grupy,np HAVING Count(*)>3 
+    34. “ORDER BY AVG(np.sredniaocen)DESC”-ustawianie
+    35. “ORDER BY LEN (imie)- grupuje imienia od najmniejszych do największych mozna dodać DESC 
+    36. “INNER JOIN”-rozbudowa FROMA-wszystkie JOIN to łączenie tabel -inesr join jest to warunek złączenia                           np. FROM Pracownicy                                                    INNER JOIN Firmy                                                            ON Pracownicy.IdFirmy=Firmy.IdFirmy          “.”-między IdFirmy daje się żeby okreslic pod tabele 
+    37. “LEFT OUTER JOIN”-dostajemy albo cała lewa albo prawa(RIGHT OUTER JOIN) tabelke ,LEFT JOIN to to samo
+    38. “FULL OUTER JOIN”-pokazuje wszystkie dopasowania nawet te z NULL
+    39. “CROSS JOIN”-np. FROM Pracownicy CROSS JOIN Firmy,łączymy ze sobą każdy wiersz z każdym wierszem
+    40. lekcja łączenie tabel praktyka- chodzi o aliasy
+    41. “INSERT INTO nazwa folderu                                      VALUES (’dane’,’dane’,’dane’)”- dodaje dane do danego folderu
+    42. “INSERT INTO folder(dane1,dane2)”- dodaje do jakiej tabeli ma być dodane
+    43. “UPDATE folder                                                                SET kolumna=’nazwa’, kolumna = ‘nazwa’”
+    44. “UPDATE folder                                                         SET np.czastrwania_min = czastrwania_min + 5”- dodaje 5 min do każdego filmu
+    45. “DELETE FROM folder                                                              WHERE Idfolderu BETWEEN nr.wiersza AND nr.wiersza”-usuwa w folderu wiersze
+    46. “CREATE DATABASE nazwa”- tworzenie bazy danych
+    47. “DROP DATABASE nazwa”-usunięcie bazy danych
+    48. “CREATE TABLE nazwa folderu                                         Idfolderu int identity(skoknp1,1) primary key,                                                                                  (Login varchar(20),                                                         Haslo varchar(20)  default (’passwor’)                                                   )
+    49. “ALTER TABLE nazwa folderu                                  ADD nazwatabelki int”-dodawanie tabelki
+    50. Profilee- to narzędzie otwieramy w tools w mysql ,może podsłuchiwać co jest wysyłąne do bazy danych,
+    51. “CREATE VIEW nazwa”-tworzy widok
+    52. “ALTER VIEW nazwa”-edytuje widok
+    53. “SELECT ia.*”-ia to alias ,to zapytanie wyciąga mi kolumny gdzie podam ten alias
